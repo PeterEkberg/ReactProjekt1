@@ -1,9 +1,9 @@
 
+import {Greeting} from './components/greeting/Greeting.js';
 function App() {
   return (
     <div>
-      <h1>TEST1</h1>
-      <h1>TEST2</h1>
+      <Greeting/>
     </div>
   );
 }
