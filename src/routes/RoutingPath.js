@@ -1,10 +1,9 @@
 const homeView ='/'
 const aboutView ='/about'
 const loginView ='/login'
-
-export default {
+const paths = {
     homeView,
     aboutView,
     loginView
-
 }
+export default paths
