@@ -6,16 +6,16 @@ import RoutingPath from '../../../routes/RoutingPath'
 import {useContext} from 'react'
 import {UserContext} from '../../../shared/provider/UserProvider'
 import {Profile} from '../../profile/Profile'
-
+import {NavigationTabs} from './navigationTabs/NavigationTabs'
 
 
 export const DesktopNavigation = () => {
     const history = useHistory()
-    const[authUser,setAuthUser] = useContext(UserContext)
+    const[authUser,] = useContext(UserContext)
     const hideButtonShowName=()=>{
         return authUser
-        ? <Profile/>
-        :<span onClick={() =>history.push(RoutingPath.loginView)}>LOGIN</span>
+        ? <div className= 'profile'> <Profile/> </div>
+        :<span className= 'loginButton' onClick={() =>history.push(RoutingPath.loginView)}>LOGIN</span>
     }
 
     return (
@@ -23,11 +23,12 @@ export const DesktopNavigation = () => {
             <img className='navigationLogotype'
                 src={LogoType}
                 alt={''}/>
-                <span onClick={() => history.push(RoutingPath.homeView)}>Products</span>
-                <span onClick={() => history.push(RoutingPath.homeView)}>Brands</span>
-                <span onClick={() => history.push(RoutingPath.homeView)}>News</span>
-                <span onClick={() => history.push(RoutingPath.homeView)}>Guidelines</span>
-                <span>{hideButtonShowName()}</span>
+                <div className='navigationTabs'>
+                    <NavigationTabs/>
+                </div>
+                
+                {hideButtonShowName()}
+
         </div>
     )
 }

@@ -1,9 +1,16 @@
 const homeView ='/'
-const aboutView ='/about'
 const loginView ='/login'
-const paths = {
+const accessoriesView ='/accessories'
+const brandsView = '/brands'
+const newsView = '/news'
+const shopView = '/shop'
+
+
+export default  {
     homeView,
-    aboutView,
-    loginView
+    loginView,
+    accessoriesView,
+    brandsView,
+    newsView,
+    shopView,
 }
-export default paths

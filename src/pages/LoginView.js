@@ -7,7 +7,7 @@ import {UserContext} from '../shared/provider/UserProvider'
 export const LoginView = () => {
     const history = useHistory()
     const[loginDetails, setLoginDetails] = useState({username:'',password:''})
-    const [authUser,setAuthUser] = useContext(UserContext)
+    const [,setAuthUser] = useContext(UserContext)
     const logIn  = () =>{
         localStorage.setItem('user',loginDetails.username)
         setAuthUser(loginDetails)

@@ -1,0 +1,10 @@
+.profileImg{
+    widows: 50px;
+    border-radius: 50%;
+}
+.profileDropdown{
+    display: none;
+    position: absolute;
+    background-color: beige;
+}
+

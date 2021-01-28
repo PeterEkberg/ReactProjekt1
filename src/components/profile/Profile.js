@@ -1,12 +1,15 @@
 import {useContext} from 'react'
 import {UserContext} from '../../shared/provider/UserProvider'
+import './Profile.css'
+import {ProfileDropdown} from './profileDropdown/ProfileDropdown'
 
 export const Profile = () => {
-    const [authUser,setAuthUSer] =useContext(UserContext)
+    const [authUser,] = useContext(UserContext)
     return (
-        <div>
-            <img src={'https://thispersondoesnotexist.com/image'} alt={''} style = {{width:50}}></img>
+        <div className = 'profileWrapper'>
+            <img className ='profileImg' src={'https://thispersondoesnotexist.com/image'} alt={''} style = {{width:50}}></img>
             {authUser.username}
+           <ProfileDropdown/>
         </div>
     )
 }

@@ -1,0 +1,10 @@
+.profileWrapper:hover .profileDropdown{
+    display:block;
+}
+
+.profileDropdown span{
+    display: block;
+    cursor:pointer;
+    padding: 20px;
+    color:rgb(25, 109, 109);
+}
