@@ -1,14 +1,14 @@
 
 import {Routes} from './routes/Routes';
 import './shared/css/Global.css'
-import {DesktopNavigation} from './components/navigation/desktopnavigation/DesktopNavigation'
 import {UserProvider} from './shared/provider/UserProvider'
+import {Navigation} from './components/navigation/Navigation'
 function App() {
   return (
     <UserProvider>
     <Routes>
 {/*       <Greeting name={"Peter"} color={"green"}/> */}
-      <DesktopNavigation/>
+      <Navigation/>
     </Routes>
     </UserProvider>
   );

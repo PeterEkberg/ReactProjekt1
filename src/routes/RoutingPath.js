@@ -6,7 +6,7 @@ const newsView = '/news'
 const shopView = '/shop'
 
 
-export default  {
+export default{
     homeView,
     loginView,
     accessoriesView,

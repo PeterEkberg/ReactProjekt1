@@ -1,7 +1,7 @@
 import React from 'react'
 import './DesktopNavigation.css'
 import {useHistory} from 'react-router-dom'
-import LogoType from '../../../shared/images/logotype.png'
+import LogoType from '../../../shared/images/borabam.png'
 import RoutingPath from '../../../routes/RoutingPath'
 import {useContext} from 'react'
 import {UserContext} from '../../../shared/provider/UserProvider'

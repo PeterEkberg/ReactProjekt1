@@ -6,7 +6,7 @@ import {useHistory} from 'react-router-dom'
 export const NavigationTabs = () => {
     const history=useHistory()
     return (
-        <ul classNAme='ulTabsWrapper'>
+        <ul className='ulTabsWrapper'>
             <li className='liTabs' onClick={() => history.push(RoutingPath.shopView)}>Butik</li>
             <li className='liTabs' onClick={() => history.push(RoutingPath.accessoriesView)}>Accesoarer</li>
             <li className='liTabs' onClick={() => history.push(RoutingPath.brandsView)}>Varumärken</li>

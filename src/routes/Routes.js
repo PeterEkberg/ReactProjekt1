@@ -12,11 +12,9 @@ import {useEffect, useContext} from 'react'
 
 export const Routes = ({children}) => {
     const [, setAuthUser] = useContext(UserContext)
-    useEffect(()=>{
-        if (localStorage.getItem('user')){setAuthUser({ username: localStorage.getItem('user')})
-    }
-        
-    })
+    useEffect(() => {
+		setAuthUser({ username: localStorage.getItem('user') })
+	}, [])
     return(
         <BrowserRouter>
         {children}
