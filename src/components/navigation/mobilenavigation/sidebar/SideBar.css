@@ -14,3 +14,12 @@
 .side-drawer.open{
     transform:translateX(0);
 }
+.profileDropdownx span{
+    display: block;
+    justify-self: left;
+    min-width: 200px;
+    cursor:pointer;
+    border: 1px solid rgb(255, 255, 254);
+    padding: 4px;
+    color:rgb(162, 212, 212);
+}
