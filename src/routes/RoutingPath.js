@@ -1,13 +1,12 @@
-const homeView ='/'
-const loginView ='/login'
-const accessoriesView ='/accessories'
+const homeView = '/'
+const loginView = '/login'
+const accessoriesView = '/accessories'
 const brandsView = '/brands'
 const newsView = '/news'
 const shopView = '/shop'
 const settingsView = '/authviews/settingsview'
 
-
-export default{
+const RoutingPath = {
     homeView,
     loginView,
     accessoriesView,
@@ -16,3 +15,4 @@ export default{
     shopView,
     settingsView,
 }
+export default RoutingPath;

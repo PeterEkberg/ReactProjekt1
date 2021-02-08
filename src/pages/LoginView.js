@@ -10,11 +10,11 @@ export const LoginView = () => {
         {username:'',password:''}
     )
 
-
     const userLogin=(e)=>{
         setLoginDetails({ ...loginDetails, [e.target.name]:e.target.value})
     }
     const [,setAuthUser] = useContext(UserContext)
+    
     const logIn  = () =>{
         localStorage.setItem('user',loginDetails.username)
         localStorage.setItem('password',loginDetails.password)

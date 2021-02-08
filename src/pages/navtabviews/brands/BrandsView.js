@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const brandsView = () => {
+export const BrandsView = () => {
     return (
         <div>
             BRANDS
