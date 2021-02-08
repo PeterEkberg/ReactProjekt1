@@ -4,6 +4,7 @@ const accessoriesView ='/accessories'
 const brandsView = '/brands'
 const newsView = '/news'
 const shopView = '/shop'
+const settingsView = '/authviews/settingsview'
 
 
 export default{
@@ -13,4 +14,5 @@ export default{
     brandsView,
     newsView,
     shopView,
+    settingsView,
 }

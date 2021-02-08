@@ -9,6 +9,8 @@ export const LoginView = () => {
     const[loginDetails, setLoginDetails] = useState(
         {username:'',password:''}
     )
+
+
     const userLogin=(e)=>{
         setLoginDetails({ ...loginDetails, [e.target.name]:e.target.value})
     }
