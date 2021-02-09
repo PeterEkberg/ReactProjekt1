@@ -14,11 +14,13 @@ export const Routes = ({children}) => {
     const [authUser, setAuthUser] = useContext(UserContext)
     console.log(authUser ? 'INLOGGAD':'UTLOGGAD')
     const blockRoute =  (allowed, forbidden) => {
-        return authUser ? allowed: forbidden
+        return authUser ? allowed : forbidden
     }
 
     useEffect(() => {
-		setAuthUser({ username: localStorage.getItem('user') })
+		if(localStorage.getItem('user')){
+            setAuthUser({ username: localStorage.getItem('user') })
+        }
 	}, [])
     
     return(

@@ -12,7 +12,7 @@ import {NavigationTabs} from './navigationTabs/NavigationTabs'
 export const DesktopNavigation = () => {
     const history = useHistory()
     const[authUser,] = useContext(UserContext)
-    const hideButtonShowName=()=>{
+    const login=()=>{
         return authUser
         ? <div className= 'profile'> <Profile/> </div>
         :<span className= 'loginButton' onClick={() =>history.push(RoutingPath.loginView)}>LOGIN</span>
@@ -27,7 +27,7 @@ export const DesktopNavigation = () => {
                     <NavigationTabs/>
                 </div>
                 
-                {hideButtonShowName()}
+                {login()}
 
         </div>
     )

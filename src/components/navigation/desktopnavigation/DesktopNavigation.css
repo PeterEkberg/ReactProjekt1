@@ -15,7 +15,7 @@
     background-color:rgb(199, 60, 169);
 }
 .loginButton, .profile{
-    grid-column:9/10;
+    grid-column:9/11;
     cursor: pointer;
     color: rgb(202, 169, 192);
     font-size:18px;
