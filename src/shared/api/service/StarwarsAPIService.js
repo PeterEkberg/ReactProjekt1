@@ -1,12 +1,14 @@
 import http from '../StarwarsAPI'
 
-const getDataLuke =()=>{
-    return http.get('people/1/')
-}
-const getStarwarsCharacter=(characterNumber)=>{
+
+export const getStarwarsCharacter=(characterNumber)=>{
     return http.get(`/people/${characterNumber}`)
 }
 
-export default {
-    getStarwarsCharacter
+export const getStarwarsPlanet=(characterNumber)=>{
+    return http.get(`/planets/${characterNumber}`)
 }
+
+/*export default {
+    getStarwarsCharacter
+}*/

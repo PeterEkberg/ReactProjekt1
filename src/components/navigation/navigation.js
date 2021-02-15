@@ -3,6 +3,7 @@ import {MobileNavigation} from './mobilenavigation/MobileNavigation'
 import {DesktopNavigation} from './desktopnavigation/DesktopNavigation'
 import {useWindowDimensions} from '../../hooks/useWindowDimensions'
 
+//Selector of which one to load of Mobile Desktop
 
 export const Navigation = () => {
     

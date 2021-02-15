@@ -8,10 +8,12 @@ import {ShopView} from '../pages/navtabviews/shop/ShopView'
 import {AccessoriesView} from '../pages/navtabviews/accessories/AccessoriesView'
 import {SettingsView} from '../pages/authviews/SettingsView'
 import {UserContext} from '../shared/provider/UserProvider'
+
 import {useEffect, useContext} from 'react'
 
 export const Routes = ({children}) => {
     const [authUser, setAuthUser] = useContext(UserContext)
+    
     console.log(authUser ? 'INLOGGAD':'UTLOGGAD')
     const blockRoute =  (allowed, forbidden) => {
         return authUser ? allowed : forbidden
@@ -21,7 +23,7 @@ export const Routes = ({children}) => {
 		if(localStorage.getItem('user')){
             setAuthUser({ username: localStorage.getItem('user') })
         }
-	}, [])
+	},[])
     
     return(
         <BrowserRouter>

@@ -8,12 +8,13 @@ import {UserContext} from '../../../shared/provider/UserProvider'
 import {Profile} from '../../profile/Profile'
 import {NavigationTabs} from './navigationTabs/NavigationTabs'
 
+// This is the Top menu/logo border
 
 export const DesktopNavigation = () => {
     const history = useHistory()
     const[authUser,] = useContext(UserContext)
     const login=()=>{
-        return authUser
+        return authUser //Return Profile name or 'Login button
         ? <div className= 'profile'> <Profile/> </div>
         :<span className= 'loginButton' onClick={() =>history.push(RoutingPath.loginView)}>LOGIN</span>
     }

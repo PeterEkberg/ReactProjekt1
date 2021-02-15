@@ -1,15 +1,18 @@
 
-import {Routes} from './routes/Routes';
+import { Routes } from './routes/Routes';
 import './shared/css/Global.css'
-import {UserProvider} from './shared/provider/UserProvider'
-import {Navigation} from './components/navigation/Navigation'
+import { UserProvider } from './shared/provider/UserProvider'
+import { CharacterProvider } from './shared/provider/CharacterProvider'
+import { Navigation } from './components/navigation/Navigation'
 function App() {
   return (
     <UserProvider>
-    <Routes>
-{/*       <Greeting name={"Peter"} color={"green"}/> */}
-      <Navigation/>
-    </Routes>
+      <CharacterProvider>
+        <Routes>
+          {/*       <Greeting name={"Peter"} color={"green"}/> */}
+          <Navigation />
+        </Routes>
+      </CharacterProvider>
     </UserProvider>
   );
 }

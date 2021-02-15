@@ -1,11 +1,12 @@
 
 //import Axios from 'axios'
-import {useState, useEffect} from 'react'
-import StarwarsAPIServices from '../../../shared/api/service/StarwarsAPIService'
+import {useState, useEffect, useContext} from 'react'
+import {getStarwarsCharacter} from '../../../shared/api/service/StarwarsAPIService'
+import {CharacterContext} from '../../../shared/provider/CharacterProvider'
 
 export const ShopView = () => {
     const [starwarsData, setStarwarsData] = useState()
-    const [count, setCount] = useState(1)
+    const [count, setCount] = useContext(CharacterContext)
 
     /*const getDataFromStarWarsAPI = () => {
         return (
@@ -16,10 +17,16 @@ export const ShopView = () => {
     }*/
 
     const getData  = async () =>{ //Version2
-        const response = await StarwarsAPIServices.getStarwarsCharacter(count)
+        const response = await getStarwarsCharacter(count)
         setStarwarsData(response)
     }
- 
+    const setCounterdata = (x) => {
+        if (x < 1) {
+            setCount(1)
+        } else {
+            setCount(x)
+        }
+    }
     useEffect(()=>{
         getData()
     },[count])
@@ -33,8 +40,8 @@ export const ShopView = () => {
             <h2>Längd : {starwarsData?.data?.height}</h2>
             <h2>Hair : {starwarsData?.data?.hair_color}</h2>
             <button onClick={()=>console.log(starwarsData.data)}>Load Star Wars</button>
-            <button onClick={()=>setCount(count-1)}>Previous</button>
-            <button onClick={()=>setCount(count+1)}>Next</button>
+            <button onClick={()=>setCounterdata(count-1)}>Previous</button>
+            <button onClick={()=>setCounterdata(count+1)}>Next</button>
 
 
        

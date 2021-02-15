@@ -9,8 +9,7 @@ export const LoginView = () => {
     const[loginDetails, setLoginDetails] = useState(
         {username:'',password:''}
     )
-
-    const userLogin=(e)=>{
+    const userLogin=(e)=>{ 
         setLoginDetails({ ...loginDetails, [e.target.name]:e.target.value})
     }
     const [,setAuthUser] = useContext(UserContext)
