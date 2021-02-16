@@ -17,14 +17,18 @@ export const ShopView = () => {
     }*/
 
     const getData  = async () =>{ //Version2
-        const response = await getStarwarsCharacter(count)
-        setStarwarsData(response)
+        try {
+            const response = await getStarwarsCharacter(count)
+            setStarwarsData(response)
+        } catch (error) {
+            setCount(1)
+        }
     }
-    const setCounterdata = (x) => {
-        if (x < 1) {
+    const setCounterdata = (newCount) => {
+        if (newCount < 1) {
             setCount(1)
         } else {
-            setCount(x)
+            setCount(newCount)
         }
     }
     useEffect(()=>{

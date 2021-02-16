@@ -8,18 +8,18 @@ export const AccessoriesView = () => {
     //const [counter, setCounter] = useContext(CharacterContext)
 
     const getData = async () => { //Version2
-        //const response = undefined
-   
+        try {
             const response = await getStarwarsPlanet(count)
             setPlanetData(response)
-
-        
+        } catch (error) {
+            setCount(1)
+        }
     }
-    const setCounterdata = (x) => {
-        if (x < 1) {
+    const setCounterdata = (newCount) => {
+        if (newCount < 1) {
             setCount(1)
         } else {
-            setCount(x)
+            setCount(newCount)
         }
     }
 
