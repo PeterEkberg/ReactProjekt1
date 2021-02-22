@@ -1,0 +1,46 @@
+import { useState, useEffect } from 'react'
+import { getPokemonCharacter } from '../../../shared/api/service/PokemonAPIService'
+
+export const BrandsView = () => {
+    const [pokemonData, setPokemonData] = useState()
+    const [search, setSearch] = useState('')
+
+    const getData = async () => {
+        try {
+            const response = await getPokemonCharacter(search)
+            setPokemonData(response)
+            console.log('DATA  ', pokemonData.data.id)
+        } catch (error) {
+            alert('theres been an error!' + error)
+            setSearch(pokemonData?.data?.id + 1)
+            /* console.log('pokemonData  ', pokemonData)
+            if (pokemonData) {
+                console.log('NO DATA')
+                setSearch(1)
+            } else {
+                setSearch('')
+            } */
+        }
+    }
+
+    const setCounterdata = (newCount) => {
+        setSearch(pokemonData.data.id + newCount)
+    }
+
+    useEffect(() => {
+        getData()
+    }, [search])
+
+    return (
+        <div>
+            <h1>POKEMON</h1>
+            <h1>Name {pokemonData?.data?.name}</h1>
+            <h2>Id {pokemonData?.data?.id} </h2>
+            <h2>Längd {pokemonData?.data?.height}</h2>
+            <input onChange={event => setSearch(event.target.value)}></input>
+            <button onClick={() => console.log(pokemonData)}>Load PokemonData</button><br /><br />
+            <button onClick={() => setCounterdata(-1)}>Previous</button>
+            <button onClick={() => setCounterdata(1)}>Next</button><br /><br />
+        </div>
+    )
+}

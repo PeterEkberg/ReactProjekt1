@@ -25,20 +25,9 @@ export const BrandsView = () => {
 
     const setCounterdata = (newCount) => {
         console.log('ID 1=', id, ', newCount= ', newCount)
-        /*const aa=id
-        const   bb=newCount
-        const cc=aa+bb
-        console.log('ccc=', cc)
-        {setId(cc)}
-        console.log('ID 2=', id)*/
-        //if (id < 1) {
-            //setId(1)
-        //    setName(1)
-        //} else {
             setId(newCount)
             setName(newCount)
-        //}
-        console.log('setCounterdata name=', newCount)
+         console.log('setCounterdata name=', newCount)
     }
 
     useEffect(() => {
