@@ -6,7 +6,7 @@ const{DATABASE_URL,PORT} = process.env
 
 const ConnectToDatabase =async ()=>{
     try{
-        await mongoose.connect(DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+        await mongoose.connect(DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
         console.log('UPPKOPPLAD')
     }catch(error){
         console.log('ERROR WHILE CONNECT: ' + error)

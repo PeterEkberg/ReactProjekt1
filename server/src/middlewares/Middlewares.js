@@ -9,6 +9,7 @@ const notFound=(request, response,next)=>{
 	response.status(404)
 	next(error)
 }
+
 const errorHandler=(error,request, response,next)=>{
 	const statusCode = response.statusCode==200? 500 : response.statusCode
 	response.status(statusCode)
@@ -17,7 +18,6 @@ const errorHandler=(error,request, response,next)=>{
 		message: error.message,
 		stackTrace: ENVIRONMENT === 'PRODUCTION'? null:  error.stack
 	})
-
 }
 
 export default{

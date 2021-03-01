@@ -4,15 +4,17 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 import Configurations from './configurations/Configurations.js'
 import Middlewares from './src/middlewares/Middlewares.js'
+//import bodyParser from 'body'
 
 
 const application = express()
+application.use(express.json())
 application.use(helmet())
 application.use(morgan('common'))
 
 Configurations.ConnectToDatabase()
 Configurations.ConnectToDPort(application)
-
+import UserRoutes from './src/routes/User.route.js'
 
 /*
 mongoose.connect('mongodb://127.0.0.1:27017/namndb', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -36,6 +38,7 @@ application.get('/dice', (request, response) => {
 	response.send(Math.random().toString())
 })
 
+UserRoutes.routes(application)
 application.use(Middlewares.notFound)
 application.use(Middlewares.errorHandler)
 
