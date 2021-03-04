@@ -5,10 +5,12 @@ import morgan from 'morgan'
 import Configurations from './configurations/Configurations.js'
 import Middlewares from './src/middlewares/Middlewares.js'
 //import bodyParser from 'body'
+import cors from 'cors'
 
 
 const application = express()
 application.use(express.json())
+application.use(cors({credentials:true}))
 application.use(helmet())
 application.use(morgan('common'))
 

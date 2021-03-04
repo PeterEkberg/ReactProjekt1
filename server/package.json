@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx nodemon Server.js",
-    "dbstart": "mongod --dbpath /usr/local/var/mongodb;npx nodemon Server.js"
+    "dbstart": "mongod --dbpath /usr/local/var/mongodb"
   },
   "keywords": [
     "REST_API",
@@ -18,6 +18,7 @@
   "author": "Peter Ekberg",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^4.4.1",
