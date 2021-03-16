@@ -75,3 +75,4 @@ const checkIfAdmin = (rec, res, next) => {
 }
 application.use(checkIfAdmin) //Körs alltid
 */
+export default application
