@@ -18,7 +18,8 @@ export const NewsView = () => {
     const [loading, setLoading] = useState(false)
     const [newUser, setNewUser] = useState({
         userName: '',
-        passWord: ''
+        passWord: '',
+        age: ''
     })
     const create = async () => {
         try {
@@ -43,7 +44,7 @@ export const NewsView = () => {
             Backend API
             <p>USERNAME</p><input onBlur={(event) => setNewUser({ ...newUser, userName: event.target.value })}></input>
             <p>PASSWORD</p><input onChange={(event) => setNewUser({ ...newUser, passWord: event.target.value })}></input>
-            <p>AGE</p><input></input>
+            <p>AGE</p><input onBlur={(event) => setNewUser({ ...newUser, age: event.target.value })}></input>
             <button onClick={() => create()}>Create user</button>
             <button onClick={() => fetchData()}>Get all users</button>
             <div>

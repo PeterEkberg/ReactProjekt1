@@ -6,49 +6,59 @@ import application from '../Server.js'
 Chai.should()
 Chai.use(ChaiHTTP)
 
-const testingNonExistentRoute = () => {
+const testingNonExistentRoute = (expectedStatusCode) => {
     //describe('TESTINGNONEXISTENTROUTE', () => {
     test('Test against non existing route in API', done => {
         Chai.request(application)
-            .get('/erererere')
+            .get('/THISROUTEDOESNOTEXIST')
             .end((request, response) => {
-                response.should.have.a.status(404)
+                response.should.have.a.status(expectedStatusCode)
                 done()
             })
     })
     //})
 }
 
-const getAllUsers = () => {
+const getAllUsers = (expextedNumberOfUsers) => {
     test('Testing return of users', done => {
         Chai.request(application)
             .get('/user')
             .end((request, response) => {
                 response.should.have.a.status(200)
                 response.body.should.be.a('array')
-                response.body.length.should.be.eq(11)
+                response.body.length.should.be.eq(expextedNumberOfUsers)
                 done()
             })
     })
 }
 
-const updateUser = () => {
-    const userID = '603d08b2650a88150ef1ffdf'
-    test('Testing update o f user', done => {
+const updateUser = (userid, newname,newpass) => {
+    //const userID = '603e5680213972158d557f82'
+    test('Testing update of user', done => {
         Chai.request(application)
-            .put(`/user/${userID}`)
-            .send({username: 'NEWUSERNAME',password:'1234'}) 
+            .put(`/user/${userid}`)
+            .send({userName: newname, passWord:newpass}) 
             .end((error, response) => {
                 response.should.have.a.status(200)
                 response.body.should.be.a('object')
-                response.body.length.should.have.property('username').eq(OLDUSERNAME)
-                //response.body.length.should.have.property('password').eq(userId)
+                response.body.data.should.have.property('userName').eq(newname)
+                response.body.data.should.have.property('passWord').eq(newpass)
                 done()
             })
     })
 }
+
+/* SAMPLE ID for TEST
+603d08b2650a88150ef1ffdf
+603e5680213972158d557f82
+604159ba33189d0749bc91c9
+60415b6033189d0749bc91d1
+60415c3a33189d0749bc91d5
+604246c6a8b0ff02df733406
+*/
+
 describe('TESTING TESTING', () => {
-    testingNonExistentRoute()
-    getAllUsers()
-    updateUser()
+    testingNonExistentRoute(404)
+    getAllUsers(13)
+    updateUser('603d08b2650a88150ef1ffdf','erik','ddd')
 })
